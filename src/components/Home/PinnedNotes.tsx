@@ -45,26 +45,26 @@ const PinnedNotes = () => {
           ))}
         </div>
       ) : (
-        data?.getNotesByUserName.length > 0 && (
-          <div className="mx-2">
+        <div className="mx-2">
+          {data?.getNotesByUserName.length > 0 && (
             <div className="uppercase text-xs font-bold px-2 bg-primary rounded-lg w-fit text-white">
               pinned
             </div>
-            <Notes data={data?.getNotesByUserName} />
+          )}
+          <Notes data={data?.getNotesByUserName} />
 
-            <div className="flex justify-between">
-              <div onClick={handlePrevious}>
-                {limit > 6 && <PrimaryButton label="Previous" />}
-              </div>
+          <div className="flex justify-between">
+            <div onClick={handlePrevious}>
+              {limit > 6 && <PrimaryButton label="Previous" />}
+            </div>
 
-              <div onClick={handleMore}>
-                {data?.getNotesByUserName?.length >= 6 && (
-                  <PrimaryButton label="More" />
-                )}
-              </div>
+            <div onClick={handleMore}>
+              {data?.getNotesByUserName?.length >= 6 && (
+                <PrimaryButton label="More" />
+              )}
             </div>
           </div>
-        )
+        </div>
       )}
     </div>
   );
