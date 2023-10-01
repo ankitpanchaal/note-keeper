@@ -34,12 +34,12 @@ const UserProvider: React.FC<UserProviderProps> = ({
   );
 };
 
-const useUser = (): UserContextProps => {
+const contextStates = (): UserContextProps => {
   const context = useContext(UserContext);
   if (!context) {
-    throw new Error("useUser must be used within a UserProvider");
+    throw new Error("contextStates must be used within a UserProvider");
   }
   return context;
 };
 
-export { UserProvider, useUser, UserContext };
+export { UserProvider, contextStates, UserContext };

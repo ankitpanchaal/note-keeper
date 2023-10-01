@@ -3,14 +3,14 @@ import { DELETE_NOTE } from "@/utils/graphql/queries";
 import { useMutation } from "@apollo/client";
 import Image from "next/image";
 import React, { FC } from "react";
-import { useUser } from "@/context/UserContext";
+import { contextStates } from "@/context/UserContext";
 
 type Props = {
   noteId: string;
 };
 
 const Delete: FC<Props> = ({ noteId }) => {
-  const { setRefetch } = useUser();
+  const { setRefetch } = contextStates();
 
   const [deleteNote, { data, loading }] = useMutation(DELETE_NOTE, {
     variables: { id: noteId }, // Pass the noteId variable to the mutation

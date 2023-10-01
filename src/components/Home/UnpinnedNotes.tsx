@@ -1,4 +1,4 @@
-import { useUser } from "@/context/UserContext";
+import { contextStates } from "@/context/UserContext";
 import { GET_NOTES } from "@/utils/graphql/queries";
 import { useQuery } from "@apollo/client";
 import React, { useEffect, useState } from "react";
@@ -7,7 +7,7 @@ import Notes from "../card/Notes";
 import PrimaryButton from "../buttons/PrimaryButton";
 
 const UnpinnedNotes = () => {
-  const { userName, refetch, setRefetch } = useUser();
+  const { userName, refetch, setRefetch } = contextStates();
   const [limit, setLimit] = useState(6);
 
   const {

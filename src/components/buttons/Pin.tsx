@@ -1,4 +1,4 @@
-import { useUser } from "@/context/UserContext";
+import { contextStates } from "@/context/UserContext";
 import { UPDATE_NOTE_PIN } from "@/utils/graphql/queries";
 import { useMutation } from "@apollo/client";
 import Image from "next/image";
@@ -12,7 +12,7 @@ type Props = {
 };
 
 const Pin: FC<Props> = ({ isPinned, noteId, setModalOpen }) => {
-  const { setRefetch } = useUser();
+  const { setRefetch } = contextStates();
 
   const [updateNotePin, { loading, data }] = useMutation(UPDATE_NOTE_PIN, {
     update: (cache, { data }) => {

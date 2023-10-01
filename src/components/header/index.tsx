@@ -2,10 +2,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useUser } from "@/context/UserContext";
+import { contextStates } from "@/context/UserContext";
 
 const Header = () => {
-  const { userName } = useUser();
+  const { userName } = contextStates();
 
   return (
     <div className=" bg-white py-2 lg:py-4 px-4 shadow-md ">

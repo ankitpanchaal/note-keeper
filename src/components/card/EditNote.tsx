@@ -7,7 +7,7 @@ import { UPDATE_NOTE } from "@/utils/graphql/queries";
 import Pin from "../buttons/Pin";
 import InputField from "../InputField/InputField";
 import TextArea from "../InputField/TextArea";
-import { useUser } from "@/context/UserContext";
+import { contextStates } from "@/context/UserContext";
 import Delete from "../buttons/Delete";
 
 type TEditNote = {
@@ -16,7 +16,7 @@ type TEditNote = {
 };
 
 const EditNote: FC<TEditNote> = ({ noteData, setModalOpen }) => {
-  const { setRefetch } = useUser();
+  const { setRefetch } = contextStates();
 
   const [data, setData] = useState<TNote>({
     title: noteData?.title || "",

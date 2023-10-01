@@ -5,12 +5,12 @@ import PrimaryButton from "../buttons/PrimaryButton";
 import { useRouter } from "next/navigation";
 import { CREATE_USER, GET_USER } from "@/utils/graphql/queries";
 import { useMutation, useQuery } from "@apollo/client";
-import { useUser } from "@/context/UserContext";
+import { contextStates } from "@/context/UserContext";
 import { toast } from "react-hot-toast";
 import InputField from "../InputField/InputField";
 
 const GetIn: FC = () => {
-  const { setUserName } = useUser();
+  const { setUserName } = contextStates();
 
   const [modalOpen, setModalOpen] = useState<boolean>(true);
   const [isNull, setIsNull] = useState<boolean>(false);

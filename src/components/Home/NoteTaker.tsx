@@ -4,13 +4,13 @@ import Icon from "../common/Icon";
 import PrimaryButton from "../buttons/PrimaryButton";
 import { useMutation } from "@apollo/client";
 import { CREATE_NOTE } from "@/utils/graphql/queries";
-import { useUser } from "@/context/UserContext";
+import { contextStates } from "@/context/UserContext";
 import InputField from "../InputField/InputField";
 import TextArea from "../InputField/TextArea";
 import { toast } from "react-hot-toast";
 
 const NoteTaker: FC = () => {
-  const { userName, setRefetch } = useUser();
+  const { userName, setRefetch } = contextStates();
 
   const [title, setTitle] = useState<string>("");
   const [tagLine, setTagLine] = useState<string>("");
