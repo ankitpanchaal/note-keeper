@@ -12,7 +12,9 @@ const Home = () => {
     <div>
       <NoteTaker />
       <PinnedNotes />
-      <UnpinnedNotes />
+      <div className="border-t border-gray-300 pt-4">
+        <UnpinnedNotes />
+      </div>
     </div>
   ) : (
     <NotAuthenticated />

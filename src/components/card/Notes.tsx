@@ -24,7 +24,7 @@ const Notes: FC<TNotes> = ({ data }) => {
         <ModalWrapper
           setModalOpen={setModalOpen}
           modalOpen={modalOpen}
-          optionalStyle="bg-[#f3f3f3]"
+          optionalStyle="bg-[#f3f3f3] py-6 -mx-6 px-2"
         >
           <EditNote
             setModalOpen={setModalOpen}

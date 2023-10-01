@@ -47,11 +47,13 @@ const PinnedNotes = () => {
       ) : (
         <div className="mx-2">
           {data?.getNotesByUserName.length > 0 && (
-            <div className="uppercase text-xs font-bold px-2 bg-primary rounded-lg w-fit text-white">
-              pinned
-            </div>
+            <>
+              <div className="uppercase text-xs font-bold px-2 py-1 bg-primary rounded-lg w-fit text-white">
+                pinned
+              </div>
+              <Notes data={data?.getNotesByUserName} />
+            </>
           )}
-          <Notes data={data?.getNotesByUserName} />
 
           <div className="flex justify-between">
             <div onClick={handlePrevious}>

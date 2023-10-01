@@ -14,15 +14,17 @@ const page = () => {
     <>
       <Toaster />
       <ApolloProvider client={client}>
-        {userName ? (
-          <div>
-            <Home />
-          </div>
-        ) : (
-          <div>
-            <GetIn />
-          </div>
-        )}
+        <div>
+          {userName ? (
+            <div>
+              <Home />
+            </div>
+          ) : (
+            <div>
+              <GetIn />
+            </div>
+          )}
+        </div>
       </ApolloProvider>
     </>
   );

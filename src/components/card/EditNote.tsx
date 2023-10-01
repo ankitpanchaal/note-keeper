@@ -71,8 +71,8 @@ const EditNote: FC<TEditNote> = ({ noteData, setModalOpen }) => {
   };
 
   return (
-    <div className=" rounded-lg w-[560px]">
-      <div className="flex justify-between -mt-6 mb-4">
+    <div className=" rounded-lg lg:w-[560px]">
+      <div className="justify-between -mt-6 mb-4 hidden lg:flex md:flex">
         <Delete noteId={data._id as string} />
         <Pin
           isPinned={data?.pin}
@@ -109,7 +109,16 @@ const EditNote: FC<TEditNote> = ({ noteData, setModalOpen }) => {
           <TextArea handleInputs={handleBodyInputChange} value={data?.body} />
         </div>
 
-        <div className=" flex justify-end mt-6">
+        <div className=" flex justify-between mt-6 items-center">
+          <div className="gap-x-3 lg:hidden md:hidden flex">
+            <Delete noteId={data._id as string} />
+            <Pin
+              isPinned={data?.pin}
+              noteId={data._id as string}
+              setModalOpen={setModalOpen}
+            />
+          </div>
+
           <div onClick={handleUpdateCTA}>
             <PrimaryButton label="Update" isLoading={loading} />
           </div>

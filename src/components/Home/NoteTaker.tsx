@@ -32,6 +32,7 @@ const NoteTaker: FC = () => {
         },
       }).then(() => {
         setRefetch(true);
+        setIsTyping(false);
         toast.success("Your Note is created");
         setTitle("");
         setTagLine("");
@@ -71,7 +72,7 @@ const NoteTaker: FC = () => {
   };
 
   return (
-    <div className="max-w-[700px] mx-auto px-8 my-4">
+    <div className="max-w-[700px] mx-auto mb-8 mt-16">
       <div className={`bg-gray-100 shadow-xl rounded-lg ${isTyping && "p-3"}`}>
         <div className="flex gap-x-2 items-center">
           <div
